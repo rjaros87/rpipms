@@ -1,0 +1,19 @@
+# example full configuration
+no_samples: 20  # Number of measurement samples
+standby_time: 60 # seconds
+response_time: 0.5  # second
+
+serial_port: "/dev/ttyAMA0"
+data_length: 32
+baudrate: 9600
+start_sequence: "\x42\x4d"
+
+data_position:
+  standard: # standard particle
+    pm1.0_position: 4
+    pm2.5_position: 6
+    pm10_position: 8
+  atmospheric: # under atmospheric environment
+    pm1.0_position: 10
+    pm2.5_position: 12
+    pm10_position: 14
