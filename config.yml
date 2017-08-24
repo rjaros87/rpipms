@@ -3,7 +3,8 @@ no_samples: 20  # Number of measurement samples
 standby_time: 60 # seconds
 response_time: 0.5  # second
 
-serial_port: "/dev/ttyAMA0"
+#serial_port: "/dev/ttyAMA0"
+serial_port: "COM3"
 data_length: 32
 baudrate: 9600
 start_sequence: "\x42\x4d"

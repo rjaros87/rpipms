@@ -39,7 +39,8 @@ class PlanTowerDevice(object):
 
     def parse_field(self, pos):
         # 256 * MSB + LSB
-        return 0x100 * ord(self.raw_data[pos]) + ord(self.raw_data[pos + 1])
+        # print(self.raw_data)
+        return 0x100 * self.raw_data[pos] + self.raw_data[pos + 1]
 
     def parse_fields(self):
         standard = self.config['data_position']['standard']
@@ -64,7 +65,7 @@ class PlanTowerDevice(object):
     def read(self):
         self.raw_data = self.port.read(self.data_length)
         try:
-            head_index = self.raw_data.index(self.config['start_sequence'])
+            head_index = self.raw_data.index(bytes(self.config['start_sequence'], encoding="ascii"))
         except:
             return  # No valid data or PlanTower not ready
 

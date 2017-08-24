@@ -2,7 +2,7 @@ import yaml
 import os
 
 from rpipms.plan_tower_sensor import PlanTowerSensor
-from rpipms.observers.oled_observer import OledObserver
+# from rpipms.observers.oled_observer import OledObserver
 from rpipms.observers.console_observer import ConsoleObserver
 
 if __name__ == "__main__":
@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
         # PlanTower data observers
         sensor.add_observer(ConsoleObserver())
-        sensor.add_observer(OledObserver())
+        # sensor.add_observer(OledObserver())
 
         sensor.start()  # start measure
     except KeyboardInterrupt:
